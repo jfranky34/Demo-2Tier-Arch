@@ -89,16 +89,32 @@ module "ec2_docker_sg" {
   vpc_id      = data.aws_vpc.default.id
 
   ingress_cidr_blocks = ["0.0.0.0/0"]
-  ingress_rules       = ["ssh-tcp", "http-80-tcp", "all-icmp"]
+  ingress_rules       = ["http-80-tcp", "all-icmp"]
+  egress_rules        = ["all-all"]
+}
+
+module "ssh_sg" {
+  source = "terraform-aws-modules/security-group/aws"
+
+  name        = "ec2_sg"
+  description = "Security group for ec2_ssh_sg"
+  vpc_id      = data.aws_vpc.default.id
+
+  ingress_cidr_blocks = ["0.0.0.0/0"]
+  ingress_rules       = ["ssh-tcp"]
   egress_rules        = ["all-all"]
 }
 
 resource "aws_instance" "ec2-docker-instance" {
   ami           = "ami-04505e74c0741db8d"
   instance_type = "t2.micro"
-  security_groups = [module.ec2_docker_sg.security_group_id]
   key_name = data.aws_key_pair.ec2_docker_key.key_name
   iam_instance_profile = aws_iam_instance_profile.ec2_rds_profile.name
+  
+  vpc_security_group_ids = [
+    module.ec2_docker_sg.this_security_group_id,
+    module.ssh_sg.this_security_group_id,
+  ]
   user_data = <<-EOF
     #!/bin/bash
     set -ex
