@@ -158,8 +158,6 @@ module "db" {
   engine_version               = "8.0.20"
   instance_class               = "db.t2.micro"
   allocated_storage            = 30
-  storage_encrypted            = true
-  performance_insights_enabled = false
 
   name     = "${var.env}rds"
   username = "fmdbuser"
