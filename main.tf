@@ -9,12 +9,9 @@ module "fmdemo-ec2-docker" {
     source      = "./ec2-docker"
 
     AWS_REGION  = var.AWS_REGION
-    vpc_private_subnet1 = module.fmdemo-vpc.private_subnet1_id
-    vpc_private_subnet2 = module.fmdemo-vpc.private_subnet2_id
+    vpc_private_subnet = module.fmdemo-vpc.private_subnet_id
     vpc_id = module.fmdemo-vpc.fmdemo_vpc_id
-    vpc_public_subnet1 = module.fmdemo-vpc.public_subnet1_id
-    vpc_public_subnet2 = module.fmdemo-vpc.public_subnet2_id
-
+    vpc_public_subnet1 = module.fmdemo-vpc.public_subnet_id
 }
 
 #Define Provider
