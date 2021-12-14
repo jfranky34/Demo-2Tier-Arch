@@ -3,13 +3,6 @@ variable "AWS_REGION" {
     default     = "us-east-1"
 }
 
-variable "BACKUP_RETENTION_PERIOD" {
-    default = "7"
-}
-
-variable "PUBLICLY_ACCESSIBLE" {
-    default = "true"
-}
 
 variable "FMDEMO_RDS_USERNAME" {
     default = "fmdbuser"
@@ -39,32 +32,20 @@ variable "DB_INSTANCE_CLASS" {
     default = "db.t2.micro"
 }
 
-variable "RDS_CIDR" {
-  description = "The CIDR block for the VPC"
-  type        = string
-  default     = "0.0.0.0/0"
-}
-
 variable "ENV" {
   description = "AWS VPC Environment Name"
   type        = string
   default     = "fmdemo"
 }
 
-variable "vpc_private_subnet1" {
-  description = "AWS VPC Environment Name"
-  type        = string
-  default     = ""
-}
-
-variable "vpc_private_subnet2" {
-  description = "AWS VPC Environment Name"
+variable "vpc_private_subnet" {
+  description = "AWS VPC Private Subnet"
   type        = string
   default     = ""
 }
 
 variable "vpc_id" {
-  description = "AWS VPC Environment Name"
+  description = "AWS VPC Id"
   type        = string
   default     = ""
 }

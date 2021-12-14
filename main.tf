@@ -6,10 +6,10 @@ module "fmdemo-vpc" {
     AWS_REGION  = var.AWS_REGION
 }
 
-module "fmdemo-webserver" {
-    source      = "./ec2server"
+module "fmdemo-ec2-docker" {
+    source      = "./ec2-docker"
 
-    ENVIRONMENT = var.ENVIRONMENT
+    ENVIRONMENT = var.ENV
     AWS_REGION  = var.AWS_REGION
     vpc_private_subnet1 = module.fmdemo-vpc.private_subnet1_id
     vpc_private_subnet2 = module.fmdemo-vpc.private_subnet2_id

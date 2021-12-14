@@ -11,7 +11,6 @@ sudo add-apt-repository \
    stable"
 sudo apt-get update
 sudo apt-get install -y docker-ce
-sudo systemctl start docker
 sudo usermod -aG docker ubuntu
 sudo chmod 666 /var/run/docker.sock
 sudo apt-get install -y wget
