@@ -9,7 +9,6 @@
 module "fmdemo-rds" {
     source      = "../module/rds"
 
-    ENVIRONMENT = var.ENV
     AWS_REGION  = var.AWS_REGION
     vpc_private_subnet = var.vpc_private_subnet
     vpc_id = var.vpc_id
