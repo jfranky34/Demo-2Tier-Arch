@@ -1,4 +1,10 @@
 
+#Define Provider
+provider "aws" {
+  region = var.AWS_REGION
+}
+
+
 module "fmdemo-vpc" {
     source      = "./module/vpc"
 
@@ -14,13 +20,3 @@ module "fmdemo-ec2-docker" {
     vpc_public_subnet = module.fmdemo-vpc.public_subnet_id
 }
 
-#Define Provider
-provider "aws" {
-  region = var.AWS_REGION
-}
-
-# Outputs #
-
-output "rds_db_endpoint" {
-  value =  module.fmdemo-rds.rds_db_endpoint
-}
