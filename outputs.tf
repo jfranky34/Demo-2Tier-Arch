@@ -1,5 +1,6 @@
 
 output "rds_db_endpoint" {
+  description = "The connection endpoint"
   value = module.fmdemo_db.db_instance_endpoint
 }
 
