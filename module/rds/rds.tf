@@ -62,6 +62,6 @@ resource "aws_db_instance" "fmdemo-rds" {
 }
 
 ## Outputs ##
-output "rds_prod_endpoint" {
+output "rds_db_endpoint" {
   value = aws_db_instance.fmdemo-rds.endpoint
 }
