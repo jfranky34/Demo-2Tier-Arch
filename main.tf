@@ -95,7 +95,7 @@ module "ec2_docker_sg" {
 }
 
 resource "aws_instance" "ec2-docker-instance" {
-  ami           = lookup(var.ami, var.aws_region)
+  ami           = "ami-04505e74c0741db8d"
   instance_type = "t2.micro"
   security_groups = [module.ec2_docker_sg.security_group_id]
   key_name = data.aws_key_pair.ec2_docker_key.key_name
