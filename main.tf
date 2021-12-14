@@ -81,7 +81,7 @@ data "aws_key_pair" "ec2_docker_key" {
   key_name = "ec2-docker"
 }
 
-module "ec2_docker_sg" {
+module "ec2_ext_sg" {
   source = "terraform-aws-modules/security-group/aws"
 
   name        = "${var.env}-ec2-docker-sg"
@@ -93,7 +93,7 @@ module "ec2_docker_sg" {
   egress_rules        = ["all-all"]
 }
 
-module "ssh_sg" {
+module "ec2_ssh_sg" {
   source = "terraform-aws-modules/security-group/aws"
 
   name        = "ec2_sg"
@@ -112,8 +112,8 @@ resource "aws_instance" "ec2-docker-instance" {
   iam_instance_profile = aws_iam_instance_profile.ec2_rds_profile.name
   
   vpc_security_group_ids = [
-    module.ec2_docker_sg.security_group_id,
-    module.ssh_sg.security_group_id,
+    module.ec2_ext_sg.security_group_id,
+    module.ec2_ssh_sg.security_group_id,
   ]
   user_data = <<-EOF
     #!/bin/bash
@@ -140,7 +140,7 @@ resource "aws_instance" "ec2-docker-instance" {
   }
 
   tags = {
-    project = "${var.env}-ec2-docker"
+     name = "${var.env}-ec2-docker"
   }
 }
 
