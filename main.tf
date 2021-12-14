@@ -148,7 +148,7 @@ module "db_sg" {
   egress_rules = ["all-all"]
 }
 
-module "fmdemo_db" {
+module "db" {
   source  = "terraform-aws-modules/rds/aws"
   version = "~> 2.0"
 
