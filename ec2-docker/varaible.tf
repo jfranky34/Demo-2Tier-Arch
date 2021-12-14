@@ -37,13 +37,14 @@ variable "vpc_id" {
 
 
 variable "vpc_private_subnet" {
-  description = "AWS VPC Environment Name"
+  description = "AWS VPC Private Subnet Name"
   type        = string
   default     = ""
 }
 
-variable "vpc_private_subnet" {
-  description = "AWS VPC Environment Name"
+variable "vpc_public_subnet" {
+  description = "AWS VPC Public Subnet Name"
   type        = string
   default     = ""
 }
+
