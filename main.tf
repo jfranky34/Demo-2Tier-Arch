@@ -96,7 +96,7 @@ module "ec2_docker_sg" {
 
 resource "aws_instance" "ec2-docker-instance" {
   ami           = lookup(var.ami, var.aws_region)
-  instance_type = t2.micro
+  instance_type = "t2.micro"
   security_groups = [module.ec2_docker_sg.this_security_group_id]
   key_name = data.aws_key_pair.ec2_docker_key.key_name
   iam_instance_profile = aws_iam_instance_profile.ec2_rds_profile.name
@@ -142,7 +142,7 @@ module "db_sg" {
     {
       description              = "ec2_db access"
       rule                     = "mysql-tcp"
-      source_security_group_id = module.ec2_docker_sg.this_security_group_id
+      source_security_group_id = module.ec2_docker_sg.security_group_id
     }
   ]
   egress_rules = ["all-all"]
@@ -168,7 +168,7 @@ module "fmdemo_db" {
 
   iam_database_authentication_enabled = true
 
-  vpc_security_group_ids = [module.db_sg.this_security_group_id]
+  vpc_security_group_ids = [module.db_sg.security_group_id]
 
   maintenance_window = "Mon:00:00-Mon:03:00"
   backup_window      = "03:00-06:00"
