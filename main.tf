@@ -97,7 +97,7 @@ module "ec2_docker_sg" {
 resource "aws_instance" "ec2-docker-instance" {
   ami           = lookup(var.ami, var.aws_region)
   instance_type = "t2.micro"
-  security_groups = [module.ec2_docker_sg.this_security_group_id]
+  security_groups = [module.ec2_docker_sg.security_group_id]
   key_name = data.aws_key_pair.ec2_docker_key.key_name
   iam_instance_profile = aws_iam_instance_profile.ec2_rds_profile.name
   user_data = <<-EOF
