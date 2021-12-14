@@ -89,7 +89,7 @@ module "ec2_ext_sg" {
   vpc_id      = data.aws_vpc.default.id
 
   ingress_cidr_blocks = ["0.0.0.0/0"]
-  ingress_rules       = ["http-80-tcp", "all-icmp"]
+  ingress_rules       = ["http-80-tcp", "https-443-tcp", "all-icmp"]
   egress_rules        = ["all-all"]
 }
 
@@ -157,7 +157,7 @@ module "db_sg" {
     {
       description              = "ec2_db access"
       rule                     = "mysql-tcp"
-      source_security_group_id = module.ec2_docker_sg.security_group_id
+      source_security_group_id = module.ec2_ext_sg.security_group_id
     }
   ]
   egress_rules = ["all-all"]
