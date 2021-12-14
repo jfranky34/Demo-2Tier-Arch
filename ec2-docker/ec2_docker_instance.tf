@@ -52,7 +52,7 @@ resource "aws_instance" "ec2-docker-instance" {
   security_groups = [aws_security_group.ec2_docker_sg.id]
   key_name = data.aws_key_pair.ec2_docker_key.key_name
   iam_instance_profile = aws_iam_instance_profile.ec2_rds_profile.name
-  user_data = file("./docker_install.sh")
+  user_data = file("../ec2-docker/docker_install.sh")
 
   root_block_device {
     volume_type = "gp2"

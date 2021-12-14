@@ -65,15 +65,10 @@ resource "aws_route_table" "public" {
 }
 
 # Route Table association with public subnet
-resource "aws_route_table_association" "to_public_subnet1" {
+resource "aws_route_table_association" "to_public_subnet" {
   subnet_id      = aws_subnet.fmdemo_vpc_public_subnet.id
   route_table_id = aws_route_table.public.id
 }
 
-# Route table association with private subnet
-resource "aws_route_table_association" "to_private_subnet1" {
-  subnet_id      = aws_subnet.fmdemo_vpc_private_subnet.id
-  route_table_id = aws_route_table.private.id
-}
 
 

@@ -22,5 +22,5 @@ provider "aws" {
 # Outputs #
 
 output "rds_db_endpoint" {
-  value = aws_db_instance.fmdemo-rds.endpoint
+  value =  module.fmdemo-rds.rds_db_endpoint
 }
