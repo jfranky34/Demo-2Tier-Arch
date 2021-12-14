@@ -112,8 +112,8 @@ resource "aws_instance" "ec2-docker-instance" {
   iam_instance_profile = aws_iam_instance_profile.ec2_rds_profile.name
   
   vpc_security_group_ids = [
-    module.ec2_docker_sg.this_security_group_id,
-    module.ssh_sg.this_security_group_id,
+    module.ec2_docker_sg.security_group_id,
+    module.ssh_sg.security_group_id,
   ]
   user_data = <<-EOF
     #!/bin/bash
