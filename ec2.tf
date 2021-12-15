@@ -27,7 +27,7 @@ resource "aws_instance" "ec2-docker-instance" {
     sudo usermod -aG docker ubuntu
     sudo chmod 666 /var/run/docker.sock
     sudo apt-get install -y wget
-    sudo apt install mysql-client
+    sudo apt install -y mysql-client
   EOF
 
   root_block_device {
