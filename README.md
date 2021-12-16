@@ -1,18 +1,18 @@
 # Demo-2Tier-Arch
-Demo for a Simple 2-Tier Architecture
+Demo for a Simple 2-Tier Architecture .
 
-## Deploy Architecture via Terraform Commands
+### Deploy Architecture via Terraform Commands
 ### Pre-requisite
 Create ec2 deployment server with IAM admin-role attached.
-Install aws-cli
+Install aws-cli.
 Install Terraform depending your OS.
 https://learn.hashicorp.com/tutorials/terraform/install-cli
 
 
 ### Deployment Steps
-Create directory <terraform>
-Extract directory/files into terraform directory or 
-Clone files from GitHub
+Create directory <terraform> .
+Extract directory/files into terraform directory or .
+Clone files from GitHub.
 Run Terraform below commands to create Infrastructure.
 '''
     terraform init
@@ -20,7 +20,7 @@ Run Terraform below commands to create Infrastructure.
     terraform apply -auto-approve
 '''
 
-## Validate docker install.
+### Validate docker install.
 Connect via ssh to newly created ec2-docker machine.
 Run commands below --
 '''
@@ -28,16 +28,16 @@ Run commands below --
     docker run hello-world
 '''
 
-## Validate MySql Client install and connect to DB.
+### Validate MySql Client install and connect to DB.
 Connect via ssh to newly created ec2-docker machine.
-Run below commands
+Run below commands.
 '''
-    mysql -v
-    mysql -h <db-endpoint> -P 3306 -u username -p <manuallyentry>
-    \! clear
-    show databases;
-    use fmdemords
-    show tables;
+    mysql -v .
+    mysql -h <db-endpoint> -P 3306 -u username -p <manuallyentry> .
+    \! clear .
+    show databases; .
+    use fmdemords .
+    show tables; .
 
     create table sales(
     ID INT, ProductName VARCHAR(255), CustomerName VARCHAR(255),DispatchDate date,
@@ -51,12 +51,12 @@ Run below commands
     select * from sales;
 '''
 
-## Cleanup Steps
-Delete RDS from AWS Console
-Delete RDS Option group from AWS Console
-Delete IAM Role from AWS Console
-Delete instance-profile from command line
+### Cleanup Steps
+Delete RDS from AWS Console.
+Delete RDS Option group from AWS Console.
+Delete IAM Role from AWS Console.
+Delete instance-profile from command line.
 '''
     aws iam delete-instance-profile --instance-profile-name <instance-profile-name>
 '''
-Run "terraform destroy"  command 
+Run "terraform destroy"  command .
