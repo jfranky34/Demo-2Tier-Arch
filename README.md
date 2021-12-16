@@ -13,7 +13,8 @@ https://learn.hashicorp.com/tutorials/terraform/install-cli
 Create directory <terraform>\
 Extract directory/files into terraform directory or\
 Clone files from GitHub\
-Run Terraform below commands to create Infrastructure\
+Run Terraform below commands to create Infrastructure
+
 > terraform init\
 > terraform plan\
 > terraform apply -auto-approve
@@ -50,8 +51,8 @@ Run below commands --
 Delete RDS from AWS Console\
 Delete RDS Option group from AWS Console\
 Delete IAM Role from AWS Console\
-Delete instance-profile from command line\
-> aws iam delete-instance-profile --instance-profile-name <instance-profile-name>\
+Delete instance-profile from command line
+> aws iam delete-instance-profile --instance-profile-name <instance-profile-name>
 
 Run "terraform destroy"  command
 
