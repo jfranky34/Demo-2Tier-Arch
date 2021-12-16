@@ -20,16 +20,16 @@ Run Terraform below commands to create Infrastructure.
 
 ### Validate docker install.
 Connect via ssh to newly created ec2-docker machine.
-Run commands below --
+Run commands below --.
 > docker --version
 > docker run hello-world
 
 ### Validate MySql Client install and connect to DB.
 Connect via ssh to newly created ec2-docker machine.
 Run below commands.
-> mysql -v .
+> mysql -v.
 > mysql -h <db-endpoint> -P 3306 -u username -p <manuallyentry>.
-> \! clear..
+> \! clear.
 > show databases;.
 > use fmdemords.
 > show tables;.
@@ -51,5 +51,5 @@ Delete RDS from AWS Console.
 Delete RDS Option group from AWS Console.
 Delete IAM Role from AWS Console.
 Delete instance-profile from command line.
-> aws iam delete-instance-profile --instance-profile-name <instance-profile-name>
+> aws iam delete-instance-profile --instance-profile-name <instance-profile-name>.
 Run "terraform destroy"  command.
