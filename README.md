@@ -26,7 +26,7 @@ Run commands below --
 
 ### Validate MySql Client install and connect to DB.
 Connect via ssh to newly created ec2-docker machine\
-Run below commands --\
+Run below commands --
 > mysql -v\
 > mysql -h <db-endpoint> -P 3306 -u username -p <manuallyentry>\
 > \! clear\
@@ -52,5 +52,6 @@ Delete RDS Option group from AWS Console\
 Delete IAM Role from AWS Console\
 Delete instance-profile from command line\
 > aws iam delete-instance-profile --instance-profile-name <instance-profile-name>\
-Run "terraform destroy"  command\
+
+Run "terraform destroy"  command
 
