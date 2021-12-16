@@ -2,7 +2,7 @@
 Demo for a Simple 2-Tier Architecture .
 
 #### Deploy Architecture via Terraform Commands
-#### Pre-requisite
+#### Pre-requisites
 Create ec2 deployment server with IAM admin-role attached\
 Install aws-cli\
 Install Terraform depending your OS\
