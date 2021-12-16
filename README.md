@@ -19,7 +19,7 @@ Run Terraform below commands to create Infrastructure.
 > terraform apply -auto-approve
 
 ### Validate docker install.
-Connect via ssh to newly created ec2-docker machine.
+Connect via ssh to newly created ec2-docker machine.\
 Run commands below --.
 > docker --version
 > docker run hello-world
