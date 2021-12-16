@@ -29,7 +29,7 @@ Run commands below --
 Connect via ssh to newly created ec2-docker machine\
 Run below commands --
 > mysql -v\
-> mysql -h <db-endpoint> -P 3306 -u username -p "<manuallyentry>"\
+> mysql -h 'db-endpoint' -P 3306 -u username -p 'manualentry'\
 > \! clear\
 > show databases;\
 > use fmdemords\
