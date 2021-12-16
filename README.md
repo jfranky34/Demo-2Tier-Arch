@@ -10,8 +10,8 @@ https://learn.hashicorp.com/tutorials/terraform/install-cli
 
 
 ### Deployment Steps
-Create directory <terraform> .
-Extract directory/files into terraform directory or .
+Create directory <terraform>.
+Extract directory/files into terraform directory or.
 Clone files from GitHub.
 Run Terraform below commands to create Infrastructure.
 > terraform init
@@ -28,11 +28,11 @@ Run commands below --
 Connect via ssh to newly created ec2-docker machine.
 Run below commands.
 > mysql -v .
-> mysql -h <db-endpoint> -P 3306 -u username -p <manuallyentry> .
-> \! clear .
-> show databases; .
-> use fmdemords .
-> show tables; .
+> mysql -h <db-endpoint> -P 3306 -u username -p <manuallyentry>.
+> \! clear..
+> show databases;.
+> use fmdemords.
+> show tables;.
 
     create table sales(
     ID INT, ProductName VARCHAR(255), CustomerName VARCHAR(255),DispatchDate date,
@@ -52,4 +52,4 @@ Delete RDS Option group from AWS Console.
 Delete IAM Role from AWS Console.
 Delete instance-profile from command line.
 > aws iam delete-instance-profile --instance-profile-name <instance-profile-name>
-Run "terraform destroy"  command .
+Run "terraform destroy"  command.
